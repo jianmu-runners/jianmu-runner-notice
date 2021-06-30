@@ -1,39 +1,59 @@
 # jianmu-runner-charbot-qywx
 
 #### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+用于对接企业微信机器人
 
-#### 软件架构
-软件架构说明
+#### 参数说明
+可参考[企业微信-群机器人配置说明](https://work.weixin.qq.com/api/doc/90000/90136/91770)
 
+##### 全局参数
+```
+# 机器人webhook地址
+JIANMU_BOT_WEBHOOK_URL
 
-#### 安装教程
+# 消息类型(text/markdown/image/news)
+JIANMU_MSGTYPE
+```
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+##### 根据msgtype不同设置不同的参数
 
-#### 使用说明
+text
+```
+# 文本内容，必填，最长不超过2048个字节，必须是utf8编码
+JIANMU_TEXT_CONTENT
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+# userid的列表，提醒群中的指定成员(@某个成员)，@all表示提醒所有人，如果开发者获取不到userid，可以使用mentioned_mobile_list
+JIANMU_MENTIONED_LIST
+# 手机号列表，提醒手机号对应的群成员(@某个成员)，@all表示提醒所有人
+JIANMU_MENTIONED_MOBILE_LIST
+```
 
-#### 参与贡献
+markdown
+```
+# markdown内容，必填，最长不超过4096个字节，必须是utf8编码
+JIANMU_MARKDOWN_CONTENT
+```
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+image
+```
+# 图片内容的base64编码，必填，图片（base64编码前）最大不能超过2M，支持JPG,PNG格式
+JIANMU_IMAGE_BASE64
 
+# 图片内容（base64编码前）的md5值，必填
+JIANMU_IMAGE_MD5
+```
 
-#### 特技
+news
+```
+# 标题，必填,不超过128个字节，超过会自动截断
+JIANMU_NEWS_TITLE
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+# 描述，不超过512个字节，超过会自动截断
+JIANMU_NEWS_DESCRIPTION
+
+# 点击后跳转的链接，必填
+JIANMU_NEWS_URL
+
+# 图文消息的图片链接，支持JPG、PNG格式，较好的效果为大图 1068*455，小图150*150。
+JIANMU_NEWS_PICURL
+```
