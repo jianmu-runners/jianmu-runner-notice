@@ -13,8 +13,8 @@ workflow:
     targets:
       - Publish
     param:
-      workspace: jianmu-runner-hub-publish
-      remote_url: https://gitee.com/jianmu_dev/jianmu-runner-publish.git
+      workspace: jianmu-runner-charbot-qywx
+      remote_url: https://gitee.com/jianmu_dev/jianmu-runner-charbot-qywx.git
       commit_branch: master
   Publish:
     type: hub_publish:v1.0
