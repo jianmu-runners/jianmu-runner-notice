@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [[ -z ${JIANMU_TEXT_CONTENT} ]]
+then
+    echo 'Error: JIANMU_TEXT_CONTENT is empty!'
+    exit 1
+fi
+set -e
+curl "${JIANMU_BOT_WEBHOOK_URL}" \
+   -H 'Content-Type: application/json' \
+   -d '
+   {
+        "msgtype": "text",
+        "text": {
+            "content": "'${JIANMU_TEXT_CONTENT}'",
+            "mentioned_list": '${JIANMU_MENTIONED_LIST}',
+            "mentioned_mobile_list": '${JIANMU_MENTIONED_MOBILE_LIST}',
+        }
+   }'
