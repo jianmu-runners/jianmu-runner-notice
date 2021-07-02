@@ -14,7 +14,7 @@ workflow:
       - Publish
     param:
       workspace: jianmu-runner-charbot-qywx
-      remote_url: https://gitee.com/jianmu_dev/jianmu-runner-charbot-qywx.git
+      remote_url: https://gitee.com/jianmu-runners/jianmu-runner-charbot-qywx.git
       commit_branch: master
   Publish:
     type: hub_publish:v1.0
