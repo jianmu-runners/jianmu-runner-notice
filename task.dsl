@@ -22,10 +22,10 @@ inputParameters:
   - name: 提醒列表，userid，若填写，将会@指定用户，@all表示提醒所有人
     ref: mentioned_list
     type: STRING
-    value: []
+    value: "[]"
   - name: 提醒列表，手机号，若填写，将会@手机号对应的用户，@all表示提醒所有人
-    ref: mentioned_list
+    ref: mentioned_moblie_list
     type: STRING
-    value: []
+    value: "[]"
 spec:
   image: 'jianmudev/jianmu-runner-charbot-qywx:v1.0'
