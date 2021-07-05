@@ -3,7 +3,7 @@ description: 对接企业微信群机器人，用于发送通知
 owner: jianmu
 source: https://gitee.com/jianmu-runners/jianmu-runner-charbot-qywx
 docs: https://gitee.com/jianmu-runners/jianmu-runner-charbot-qywx
-ref: charbot_qywx_send
+ref: qywx_notice
 version: v1.0
 type: DOCKER
 inputParameters:
@@ -28,4 +28,4 @@ inputParameters:
     type: STRING
     value: "[]"
 spec:
-  image: 'jianmudev/jianmu-runner-charbot-qywx:v1.0'
+  image: 'jianmudev/jianmu-runner-chatbot-qywx:v1.0'
