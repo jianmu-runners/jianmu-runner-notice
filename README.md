@@ -1,4 +1,4 @@
-# jianmu-runner-charbot-qywx
+# jianmu-runner-chatbot-qywx
 
 #### 介绍
 用于对接企业微信机器人
