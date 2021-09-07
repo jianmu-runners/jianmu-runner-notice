@@ -1,11 +1,5 @@
-name: 企业微信发送通知
-description: 对接企业微信群机器人，用于发送通知
-owner: jianmu
-source: https://gitee.com/jianmu-runners/jianmu-runner-charbot-qywx
-docs: https://gitee.com/jianmu-runners/jianmu-runner-charbot-qywx
 ref: qywx_notice
 version: v1.0
-type: DOCKER
 inputParameters:
   - name: 企业微信机器人webhook地址
     ref: bot_webhook_url
@@ -28,4 +22,4 @@ inputParameters:
     type: STRING
     value: "[]"
 spec:
-  image: 'jianmudev/jianmu-runner-chatbot-qywx:v1.0'
+  image: 'jianmudev/qywx_notice:1.0.0'
