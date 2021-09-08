@@ -1,6 +1,6 @@
 workflow:
   name: 发布企业微信机器人任务
-  ref: publish_qywx_charbot_publish
+  ref: publish_qywx_chatbot_publish
   description: 发布企业微信机器人发通知的任务到hub
   Start:
     type: start
@@ -13,8 +13,8 @@ workflow:
     targets:
       - Publish
     param:
-      workspace: jianmu-runner-charbot-qywx
-      remote_url: https://gitee.com/jianmu-runners/jianmu-runner-charbot-qywx.git
+      workspace: jianmu-runner-chatbot-qywx
+      remote_url: https://gitee.com/jianmu-runners/jianmu-runner-chatbot-qywx.git
       commit_branch: master
   Publish:
     type: hub_publish:v1.0
@@ -24,7 +24,7 @@ workflow:
       - End
     param:
       registry_url: https://hub.jianmu.dev
-      task_dsl_file:  jianmu-runner-charbot-qywx/task.dsl
+      task_dsl_file:  jianmu-runner-chatbot-qywx/task.dsl
       hub_appkey: ((jianmuhub.appkey))
   End:
     type: end
