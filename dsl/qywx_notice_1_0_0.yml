@@ -22,4 +22,4 @@ inputParameters:
     type: STRING
     value: "[]"
 spec:
-  image: 'jianmudev/qywx_notice:1.0.0'
+  image: 'jianmudev/jianmu-runner-qywx-notice:1.0.0'
