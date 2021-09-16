@@ -1,4 +1,4 @@
-# jianmu-runner-chatbot-qywx
+# jianmu-runner-notice
 
 #### 介绍
 用于对接企业微信机器人
@@ -56,4 +56,24 @@ JIANMU_NEWS_URL
 
 # 图文消息的图片链接，支持JPG、PNG格式，较好的效果为大图 1068*455，小图150*150。
 JIANMU_NEWS_PICURL
+```
+
+#### 构建docker镜像
+```
+# 创建docker镜像
+docker build -t jianmudev/jianmu-runner-qywx-notice:${version} .
+
+# 上传docker镜像
+docker push jianmudev/jianmu-runner-qywx-notice:${version}
+```
+
+#### 用法
+企业微信发送通知:
+```
+docker run --rm \
+  -e JIANMU_BOT_WEBHOOK_URL=xxx \
+  -e JIANMU_MSGTYPE=xxx \
+  -e JIANMU_TEXT_CONTENT=xxx \
+  -e JIANMU_MENTIONED_MOBILE_LIST='["xxx"]' \
+  jianmudev/jianmu-runner-notice:${version}
 ```
