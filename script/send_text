@@ -12,8 +12,8 @@ curl "${JIANMU_BOT_WEBHOOK_URL}" \
    {
         "msgtype": "text",
         "text": {
-            "content": "'${JIANMU_TEXT_CONTENT}'",
-            "mentioned_list": '${JIANMU_MENTIONED_LIST}',
-            "mentioned_mobile_list": '${JIANMU_MENTIONED_MOBLIE_LIST}'
+            "content": "'"${JIANMU_TEXT_CONTENT}"'",
+            "mentioned_list": '"${JIANMU_MENTIONED_LIST}"',
+            "mentioned_mobile_list": '"${JIANMU_MENTIONED_MOBILE_LIST}"'
         }
    }'
