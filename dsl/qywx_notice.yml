@@ -1,5 +1,5 @@
 ref: qywx_notice
-version: 1.1.0
+version: 1.2.0
 inputParameters:
   - name: 企业微信机器人webhook地址
     ref: bot_webhook_url
@@ -21,5 +21,33 @@ inputParameters:
     ref: mentioned_mobile_list
     type: STRING
     value: '[]'
+  - name: markdown消息内容
+    ref: markdown_content
+    type: STRING
+    value: markdown info
+  - name: 图片内容的base64编码
+    ref: image_base64
+    type: STRING
+    value: ""
+  - name: 图片内容（base64编码前）的md5值
+    ref: image_md5
+    type: STRING
+    value: ""
+  - name: 图文消息标题，不超过128个字节，超过会自动截断
+    ref: news_title
+    type: STRING
+    value: ""
+  - name: 图文消息描述，不超过512个字节，超过会自动截断
+    ref: news_description
+    type: STRING
+    value: ""
+  - name: 图文消息点击后跳转的链接
+    ref: news_url
+    type: STRING
+    value: ""
+  - name: 图文消息的图片链接
+    ref: news_picurl
+    type: STRING
+    value: ""
 spec:
-  image: 'jianmudev/jianmu-runner-qywx-notice:1.1.0'
+  image: 'jianmudev/jianmu-runner-qywx-notice:1.2.0'

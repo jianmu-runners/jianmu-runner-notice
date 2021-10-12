@@ -68,7 +68,7 @@ docker push jianmudev/jianmu-runner-qywx-notice:${version}
 ```
 
 #### 用法
-企业微信发送通知:
+企业微信发送通知(以text类型为例):
 ```
 docker run --rm \
   -e JIANMU_BOT_WEBHOOK_URL=xxx \
@@ -77,3 +77,5 @@ docker run --rm \
   -e JIANMU_MENTIONED_MOBILE_LIST='["xxx"]' \
   jianmudev/jianmu-runner-notice:${version}
 ```
+
+

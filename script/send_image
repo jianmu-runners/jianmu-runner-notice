@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if [[ -z ${JIANMU_IMAGE_BASE64} ]]
+then
+    echo 'Error: JIANMU_IMAGE_BASE64 is empty!'
+    exit 1
+fi
+
+if [[ -z ${JIANMU_IMAGE_MD5} ]]
+then
+    echo 'Error: JIANMU_IMAGE_MD5 is empty!'
+    exit 1
+fi
+
+set -e
+curl "${JIANMU_BOT_WEBHOOK_URL}" \
+   -H 'Content-Type: application/json' \
+   -d '
+   {
+        "msgtype": "image",
+        "image": {
+            "base64": "'"${JIANMU_IMAGE_BASE64}"'",
+            "md5": "'"${JIANMU_IMAGE_MD5}"'"
+        }
+   }'

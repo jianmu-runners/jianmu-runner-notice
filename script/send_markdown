@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [[ -z ${JIANMU_MARKDOWN_CONTENT} ]]
+then
+    echo 'Error: JIANMU_MARKDOWN_CONTENT is empty!'
+    exit 1
+fi
+set -e
+curl "${JIANMU_BOT_WEBHOOK_URL}" \
+   -H 'Content-Type: application/json' \
+   -d '
+   {
+        "msgtype": "markdown",
+        "markdown": {
+            "content": "'"${JIANMU_MARKDOWN_CONTENT}"'"
+        }
+   }'

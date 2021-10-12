@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [[ -z ${JIANMU_NEWS_TITLE} ]]
+then
+    echo 'Error: JIANMU_NEWS_TITLE is empty!'
+    exit 1
+fi
+
+if [[ -z ${JIANMU_NEWS_URL} ]]
+then
+    echo 'Error: JIANMU_NEWS_URL is empty!'
+    exit 1
+fi
+
+set -e
+curl "${JIANMU_BOT_WEBHOOK_URL}" \
+   -H 'Content-Type: application/json' \
+   -d '
+   {
+        "msgtype": "news",
+        "news": {
+            "articles": [{
+                "title": "'"${JIANMU_NEWS_TITLE}"'",
+                "description": "'"${JIANMU_NEWS_DESCRIPTION}"'",
+                "url": "'"${JIANMU_NEWS_URL}"'",
+                "picurl": "'"${JIANMU_NEWS_PICURL}"'"
+            }]
+	}
+   }'
