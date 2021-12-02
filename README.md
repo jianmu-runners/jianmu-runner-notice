@@ -8,11 +8,8 @@
 
 ##### 全局参数
 ```
-# 机器人webhook地址
+# 机器人webhook地址，必填
 JIANMU_BOT_WEBHOOK_URL
-
-# 消息类型(text/markdown/image/news)
-JIANMU_MSGTYPE
 ```
 
 ##### 根据msgtype不同设置不同的参数
