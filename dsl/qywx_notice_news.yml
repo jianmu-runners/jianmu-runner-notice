@@ -22,4 +22,6 @@ inputParameters:
     type: STRING
     value: ""
 spec:
-  image: 'jianmudev/jianmu-runner-qywx-notice:1.2.0-news'
+  image: 'jianmudev/jianmu-runner-qywx-notice:1.2.0'
+  entrypoint: 
+  - '/usr/local/bin/send_news'

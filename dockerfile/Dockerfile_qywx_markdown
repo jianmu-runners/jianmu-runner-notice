@@ -1,5 +1,0 @@
-FROM curlimages/curl:7.77.0
-
-ADD script/send_markdown /usr/local/bin/send
-
-ENTRYPOINT ["/usr/local/bin/send"]
