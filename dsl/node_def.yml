@@ -1,16 +1,28 @@
 ref: qywx_notice
-version: 1.2.1-${message_type}
+version: 1.2.1-news
 inputParameters:
   - name: 企业微信机器人webhook地址
     ref: bot_webhook_url
     type: SECRET
     required: true
-  - name: 对应输入参数
-    ref: input_params
+  - name: 图文消息标题，不超过128个字节，超过会自动截断
+    ref: news_title
     type: STRING
     required: true
+  - name: 图文消息描述，不超过512个字节，超过会自动截断
+    ref: news_description
+    type: STRING
+    value: ""
+  - name: 图文消息点击后跳转的链接
+    ref: news_url
+    type: STRING
+    required: true
+  - name: 图文消息的图片链接
+    ref: news_picurl
+    type: STRING
+    value: ""
 spec:
-  image: 'jianmurunner/qywx_notice:1.2.1-${message_type}'
+  image: 'jianmurunner/qywx_notice:1.2.1-news'
   entrypoint: 
-  - '/usr/local/bin/${cmd}'
+  - '/usr/local/bin/send_news'
 
