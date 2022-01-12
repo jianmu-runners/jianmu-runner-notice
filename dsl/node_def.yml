@@ -1,16 +1,23 @@
 ref: qywx_notice
-version: 1.2.1-${message_type}
+version: 1.2.1-text
 inputParameters:
   - name: 企业微信机器人webhook地址
     ref: bot_webhook_url
     type: SECRET
     required: true
-  - name: 对应输入参数
-    ref: input_params
+  - name: text消息内容
+    ref: text_content
     type: STRING
     required: true
+  - name: 提醒列表，userid，若填写，将会@指定用户，@all表示提醒所有人
+    ref: mentioned_list
+    type: STRING
+    value: '[]'
+  - name: 提醒列表，手机号，若填写，将会@手机号对应的用户，@all表示提醒所有人
+    ref: mentioned_mobile_list
+    type: STRING
+    value: '[]'
 spec:
-  image: 'jianmurunner/qywx_notice:1.2.1-${message_type}'
-  entrypoint: 
-  - '/usr/local/bin/${cmd}'
-
+  image: 'jianmurunner/qywx_notice:1.2.1-text'
+  entrypoint:
+  - '/usr/local/bin/send_text'
