@@ -18,6 +18,7 @@ inputParameters:
     type: STRING
     value: '[]'
 spec:
-  image: 'jianmudev/jianmu-runner-qywx-notice:1.2.0'
+  image: 'jianmurunner/qywx_notice:1.2.1-text'
   entrypoint: 
   - '/usr/local/bin/send_text'
+

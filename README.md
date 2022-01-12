@@ -58,10 +58,10 @@ JIANMU_NEWS_PICURL
 #### 构建docker镜像
 ```
 # 创建docker镜像
-docker build -t jianmudev/jianmu-runner-qywx-notice:${version} .
+docker build -t jianmurunner/qywx_notice:${version}-${message_type} .
 
 # 上传docker镜像
-docker push jianmudev/jianmu-runner-qywx-notice:${version}
+docker push jianmurunner/qywx_notice:${version}-${message_type}
 ```
 
 #### 用法
