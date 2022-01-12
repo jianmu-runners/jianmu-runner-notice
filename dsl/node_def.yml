@@ -1,16 +1,16 @@
 ref: qywx_notice
-version: 1.2.1-${message_type}
+version: 1.2.1-markdown
 inputParameters:
   - name: 企业微信机器人webhook地址
     ref: bot_webhook_url
     type: SECRET
     required: true
-  - name: 对应输入参数
-    ref: input_params
+  - name: markdown消息内容
+    ref: markdown_content
     type: STRING
     required: true
 spec:
-  image: 'jianmurunner/qywx_notice:1.2.1-${message_type}'
+  image: 'jianmurunner/qywx_notice:1.2.1-markdown'
   entrypoint: 
-  - '/usr/local/bin/${cmd}'
+  - '/usr/local/bin/send_markdown'
 
