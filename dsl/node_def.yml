@@ -1,16 +1,20 @@
 ref: qywx_notice
-version: 1.2.1-${message_type}
+version: 1.2.1-image
 inputParameters:
   - name: 企业微信机器人webhook地址
     ref: bot_webhook_url
     type: SECRET
     required: true
-  - name: 对应输入参数
-    ref: input_params
+  - name: 图片内容的base64编码
+    ref: image_base64
+    type: STRING
+    required: true
+  - name: 图片内容（base64编码前）的md5值
+    ref: image_md5
     type: STRING
     required: true
 spec:
-  image: 'jianmurunner/qywx_notice:1.2.1-${message_type}'
+  image: 'jianmurunner/qywx_notice:1.2.1-image'
   entrypoint: 
-  - '/usr/local/bin/${cmd}'
+  - '/usr/local/bin/send_image'
 
